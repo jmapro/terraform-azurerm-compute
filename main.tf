@@ -170,6 +170,3 @@ resource "azurerm_network_interface" "vm" {
   }
 }
 
-
-  }
-}

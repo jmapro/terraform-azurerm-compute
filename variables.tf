@@ -101,7 +101,7 @@ variable "public_ip_address_allocation" {
 variable "public_ip" {
   description = "(Optional) Add Public IP or not"
   default = "true"
-
+}
 variable "boot_diagnostics" {
   description = "(Optional) Enable or Disable boot diagnostics"
   default = "false"
