@@ -106,6 +106,7 @@ variable "boot_diagnostics" {
   description = "(Optional) Enable or Disable boot diagnostics"
   default = "false"
 }
+
 variable "data_sa_type" {
   description = "Data Disk Storage Account type"
   default = "Standard_LRS"
@@ -119,4 +120,9 @@ variable "data_disk_size_gb" {
 variable "delete_os_disk_on_termination" {
    description = "Delete datadisk when machine is terminated"
    default = "false"
+}
+
+variable "boot_diagnostics_sa_type" {
+   description = "(Optional) Storage account type for boot diagnostics"
+   default = "Standard_LRS"
 }
