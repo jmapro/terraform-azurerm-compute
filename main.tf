@@ -199,6 +199,7 @@ resource "azurerm_virtual_machine" "vm-windows-with-datadisk" {
   vm_size                       = "${var.vm_size}"
   network_interface_ids         = ["${element(azurerm_network_interface.vm.*.id, count.index)}"]
   delete_os_disk_on_termination = "${var.delete_os_disk_on_termination}"
+  delete_data_disks_on_termination = "${var.delete_datadisk_on_termination}"
 
   storage_image_reference {
     id        = "${var.vm_os_id}"
@@ -258,7 +259,7 @@ resource "azurerm_public_ip" "vm" {
 }
 
 resource "azurerm_network_security_group" "vm" {
-  name                = "${var.vm_hostname}nsg"
+  name                = "${var.vm_hostname}-nsg"
   location            = "${azurerm_resource_group.vm.location}"
   resource_group_name = "${azurerm_resource_group.vm.name}"
 

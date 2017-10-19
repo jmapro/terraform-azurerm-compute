@@ -133,3 +133,8 @@ variable "boot_diagnostics_sa_type" {
    description = "(Optional) Storage account type for boot diagnostics"
    default = "Standard_LRS"
 }
+
+variable "delete_datadisk_on_termination" {
+  description = "Delete datadisk when machine is terminated"
+  default = "false"
+}
