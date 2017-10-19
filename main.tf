@@ -187,6 +187,7 @@ resource "azurerm_virtual_machine" "vm-windows-with-datadisk" {
   vm_size                       = "${var.vm_size}"
   network_interface_ids         = ["${element(azurerm_network_interface.vm.*.id, count.index)}"]
   delete_os_disk_on_termination = "${var.delete_os_disk_on_termination}"
+  delete_data_disks_on_termination = "${var.delete_datadisk_on_termination}"
 
   storage_image_reference {
     id        = "${var.vm_os_id}"
